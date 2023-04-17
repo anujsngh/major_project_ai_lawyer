@@ -1,9 +1,29 @@
+import nltk
 from nltk.corpus import stopwords
 from gensim import corpora, models
-from gensim.models import TfidfModel, bm25model
+from gensim.models import TfidfModel, KeyedVectors
 from gensim.similarities import Similarity
 from sklearn.metrics.pairwise import euclidean_distances
 import os
+from rank_bm25 import BM25Okapi
+
+
+# Download the stopwords resource
+nltk.download('stopwords')
+
+
+def load_raw_case_docs():
+    # Set the files_directory variable to the current directory
+    files_directory = "case_docs"
+
+    # Read case details from text files and store in a list
+    case_documents = []
+    for file_name in os.listdir(files_directory):
+        if file_name.endswith('.txt'):
+            with open(os.path.join(files_directory, file_name), 'r') as f:
+                content = f.read()
+                case_documents.append(content)
+    return case_documents
 
 
 def load_case_docs():
@@ -19,12 +39,13 @@ def load_case_docs():
         if file_name.endswith('.txt'):
             with open(os.path.join(files_directory, file_name), 'r') as f:
                 content = f.read()
-                case_documents.append(content)
+                content_list = content.split()
+                case_documents.append(content_list)
     
-    # return case_documents
-    return ["This is a document about cats.",
-    "This document is about dogs.",
-    "This document is about cats and dogs."]
+    return case_documents
+    # return ["This is a document about cats.",
+    # "This document is about dogs.",
+    # "This document is about cats and dogs."]
 
 
 def extract_keywords_run1(query):
@@ -135,14 +156,20 @@ def extract_keywords_and_vectors_run3(query):
     word2vec_model = models.Word2Vec(case_documents)
 
     # Represent the query as word2vec vector
-    query_vector = sum(word2vec_model[term] for term in query_terms) / len(query_terms)
+    query_vector = None
+
+    # Calculate query vector
+    try:
+        query_vector = sum(word2vec_model.wv[term] for term in query_terms if term in word2vec_model.wv) / len(query_terms)
+    except KeyError or ZeroDivisionError as e:
+        # Handle KeyError here, e.g. by setting query_vector to a default value
+        query_vector = None
+        print(f"Error: {e} not found in word2vec model. Using default value for query vector.")
 
     return keywords, query_vector
 
 
 def retrieve_documents_bm25(query_keywords):
-    # Step 1: Create an index of case documents
-
     # Load the case documents into a list or a corpus object
     case_documents = load_case_docs()  # List of case documents
 
@@ -158,14 +185,14 @@ def retrieve_documents_bm25(query_keywords):
     query_bow = dictionary.doc2bow(query_keywords)
 
     # Create the BM25 index for the corpus
-    bm25_obj = bm25model(corpus)
+    bm25_obj = BM25Okapi(corpus)
 
     # Get the average document length in the corpus
-    avg_doc_len = sum(len(doc) for doc in corpus) / len(corpus)
+    # avg_doc_len = sum(len(doc) for doc in corpus) / len(corpus)
 
     # Compute BM25 scores for all case documents
-    # scores = bm25.get_scores(query_bow)
-    scores = bm25_obj.get_scores(query_bow, avg_doc_len)
+    scores = bm25_obj.get_scores(query_bow)
+    # scores = bm25_obj.get_scores(query_bow, avg_doc_len)
 
     # Step 5: Retrieve the top-ranked case documents
 
@@ -190,10 +217,27 @@ def retrieve_documents_word2vec(query_keywords, query_vector):
     # Train a word2vec model on the case documents
     word2vec_model = models.Word2Vec(case_documents)
 
-    # Represent the query and case documents as word2vec vectors
-    query_vector = sum(word2vec_model[term] for term in query_keywords) / len(query_keywords)
-    case_documents_vectors = [sum(word2vec_model[term] for term in doc) / len(doc) for doc in case_documents]
-
+    ## Represent the query and case documents as word2vec vectors
+    
+    query_vector = None
+    # Calculate query vector
+    try:
+        query_vector = sum(word2vec_model.wv[term] for term in query_keywords if term in word2vec_model.wv) / len(query_keywords)
+    except KeyError or ZeroDivisionError as e:
+        # Handle KeyError here, e.g. by setting query_vector to a default value
+        query_vector = None
+        print(f"Error: {e} not found in word2vec model. Using default value for query vector.")
+    
+    case_documents_vectors = None
+    # Calculate case documents vectors
+    try:
+        case_documents_vectors = [sum(word2vec_model.wv[term] for term in doc if term in word2vec_model.wv) / len(doc) for doc in case_documents if len(doc) > 0]
+    except KeyError or ZeroDivisionError as e:
+        # Handle KeyError here, e.g. by setting query_vector to a default value
+        case_documents_vectors = None
+        print(f"Error: {e} not found in word2vec model. Using default value for query vector.")
+    
+    
     # Step 5: Rank case documents based on Euclidean distance
 
     # Compute the Euclidean distances between the query vector and case documents vectors
@@ -212,18 +256,19 @@ def retrieve_documents_word2vec(query_keywords, query_vector):
 
 
 def combine_results(documents_bm25_run1, documents_bm25_run2, documents_word2vec_run3):
-    # Step 1: Create an index of case documents
-
-    # Load the case documents into a list or a corpus object
-    case_documents = load_case_docs()  # List of case documents
-    
     # Combine the results from all three runs
     merged_documents = []
 
     # Convert document lists to sets for faster comparison
-    set_documents_bm25_run1 = set(documents_bm25_run1)
-    set_documents_bm25_run2 = set(documents_bm25_run2)
-    set_documents_word2vec_run3 = set(documents_word2vec_run3)
+    documents_bm25_run1_tuples = [tuple(doc) for doc in documents_bm25_run1]
+    set_documents_bm25_run1 = set(documents_bm25_run1_tuples)
+    
+    documents_bm25_run2_tuples = [tuple(doc) for doc in documents_bm25_run2]
+    set_documents_bm25_run2 = set(documents_bm25_run2_tuples)
+    
+    documents_word2vec_run3_tuples = [tuple(doc) for doc in documents_word2vec_run3]
+    set_documents_word2vec_run3 = set(documents_word2vec_run3_tuples)
+    
 
     # Find common documents in Run 1 and Run 2
     common_documents_bm25 = set_documents_bm25_run1.intersection(set_documents_bm25_run2)
@@ -232,17 +277,17 @@ def combine_results(documents_bm25_run1, documents_bm25_run2, documents_word2vec
     common_documents = common_documents_bm25.intersection(set_documents_word2vec_run3)
 
     # Add documents from Run 1 that are not in common with Run 2 and Run 3
-    for doc in documents_bm25_run1:
+    for doc in documents_bm25_run1_tuples:
         if doc not in common_documents:
             merged_documents.append(doc)
 
     # Add documents from Run 2 that are not in common with Run 1 and Run 3
-    for doc in documents_bm25_run2:
+    for doc in documents_bm25_run2_tuples:
         if doc not in common_documents:
             merged_documents.append(doc)
 
     # Add documents from Run 3 that are not in common with Run 1 and Run 2
-    for doc in documents_word2vec_run3:
+    for doc in documents_word2vec_run3_tuples:
         if doc not in common_documents:
             merged_documents.append(doc)
 
@@ -255,4 +300,4 @@ def combine_results(documents_bm25_run1, documents_bm25_run2, documents_word2vec
 
 
 if __name__ == "__main__":
-    print(load_case_docs())
+    pass
