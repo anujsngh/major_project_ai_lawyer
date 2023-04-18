@@ -1,5 +1,10 @@
 import nltk
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+import string
+import re
+from unicodedata import normalize
 from gensim import corpora, models
 from gensim.models import TfidfModel, KeyedVectors
 from gensim.similarities import Similarity
@@ -10,6 +15,37 @@ from rank_bm25 import BM25Okapi
 
 # Download the stopwords resource
 nltk.download('stopwords')
+
+
+def load_preprocessed_text_data(text_data):
+    # Normalization
+    text = normalize('NFKD', text).encode('ascii', 'ignore').decode('utf-8', 'ignore')
+
+    # Remove special characters and digits
+    text = re.sub(r'[^0-9a-zA-Z]', ' ', text)
+
+    # Tokenization
+    tokens = word_tokenize(text)
+
+    # Convert to lowercase
+    tokens = [token.lower() for token in tokens]
+
+    # Remove punctuation
+    tokens = [token for token in tokens if token not in string.punctuation]
+
+    # Remove stop words
+    stop_words = set(stopwords.words('english'))
+    tokens = [token for token in tokens if token not in stop_words]
+
+    # Lemmatization
+    lemmatizer = WordNetLemmatizer()
+    tokens = [lemmatizer.lemmatize(token) for token in tokens]
+
+    # Join tokens back into text
+    preprocessed_text = " ".join(tokens)
+
+    return preprocessed_text
+
 
 
 def load_raw_case_docs():
@@ -43,9 +79,6 @@ def load_case_docs():
                 case_documents.append(content_list)
     
     return case_documents
-    # return ["This is a document about cats.",
-    # "This document is about dogs.",
-    # "This document is about cats and dogs."]
 
 
 def extract_keywords_run1(query):

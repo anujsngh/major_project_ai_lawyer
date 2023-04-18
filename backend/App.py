@@ -19,52 +19,30 @@ def search():
     # Replace this with your actual backend logic
 
     ### For Task 1 ###
-    logging.debug(query)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     # Extract keywords from the query for Run 1
     query_keywords_run1 = extract_keywords_run1(query)
-    logging.debug(query_keywords_run1)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
+    
     # Extract keywords from the query for Run 2
     query_keywords_run2 = extract_keywords_run2(query)
-    logging.debug(query_keywords_run2)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
+    
     # Extract keywords and compute word2vec vectors for Run 3
     query_keywords_run3, query_vector_run3 = extract_keywords_and_vectors_run3(query)
-    logging.debug(query_keywords_run3)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-    logging.debug(query_vector_run3)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     # Retrieve documents using BM25 for Run 1 and Run 2
     documents_bm25_run1 = retrieve_documents_bm25(query_keywords_run1)
-    logging.debug(documents_bm25_run1)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     documents_bm25_run2 = retrieve_documents_bm25(query_keywords_run2)
-    logging.debug(documents_bm25_run2)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
+    
     # Retrieve documents using word2vec and Euclidean distance for Run 3
     documents_word2vec_run3 = retrieve_documents_word2vec(query_keywords_run3, query_vector_run3)
-    logging.debug(documents_word2vec_run3)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     # Combine the results from all three runs
     merged_documents = combine_results(documents_bm25_run1, documents_bm25_run2, documents_word2vec_run3)
-    logging.debug(merged_documents)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-    case_documents = load_raw_case_docs()
-    logging.debug(case_documents)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-
-    # Retrieve the top 3 ranked case documents
-    # Assuming merged_documents is a list of tuples with multiple values per item
-    top_docs_indices = [doc_idx for doc_idx, *_ in merged_documents[:3]]  # Get indices of top 3 documents
-    logging.debug(top_docs_indices)
-    logging.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
-    exit()
-    top_documents = [case_documents[doc_idx] for doc_idx in top_docs_indices]  # Get top 3 documents
-
+    
+    # case_documents = load_raw_case_docs()
+    
+    # # Retrieve the top 3 ranked case documents
+    # # Assuming merged_documents is a list of tuples with multiple values per item
+    # top_docs_indices = [doc_idx for doc_idx, *_ in merged_documents[:3]]  # Get indices of top 3 documents
+    # top_documents = [case_documents[doc_idx] for doc_idx in top_docs_indices]  # Get top 3 documents
+    top_documents = merged_documents
     
     # Create a list of dictionaries to represent the top documents
     top_documents_json = []
