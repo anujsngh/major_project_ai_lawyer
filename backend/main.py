@@ -1,5 +1,6 @@
 from utils import *
 import json
+from flask import jsonify
 
 
 def run1(query):
@@ -25,13 +26,29 @@ def run1(query):
 
     top_docs = load_top_documents(similarity_scores, documents)
 
-    # Create a list of dictionaries to represent the top documents
-    top_documents_json = []
-    for i, document in enumerate(top_docs):
-        doc_dict = {"document_id": i+1, "content": document}  # Create a dictionary for each document
-        top_documents_json.append(doc_dict)  # Add the dictionary to the list
+    # return top_docs
 
-    return top_documents_json
+    # Create a list of dictionaries to represent the top documents
+    top_documents = []
+    for i, document in enumerate(top_docs):
+        try:
+            doc = document.split("\n")
+            content = {
+                "court" : doc[1],
+                "title" : doc[0],
+                "case_num" : doc[4],
+                "judge_date" : doc[3],
+                "judge_by" : doc[5].split(": ")[1],
+                "pet_name" : doc[0].split(" v ")[0],
+                "resp_name" : doc[0].split(" v ")[1],
+                "details" : document
+            }
+            doc_dict = {"doc_id": i+1, "content": content}  # Create a dictionary for each document
+            top_documents.append(doc_dict)  # Add the dictionary to the list
+        except:
+            continue
+
+    return top_documents
     
     
 
