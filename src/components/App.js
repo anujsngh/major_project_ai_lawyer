@@ -78,9 +78,10 @@ const App = () => {
       <h2 className="results-title">Search Results</h2>
       <ul className="results-list">
         {searchResults.map((result) => (
-          <li key={result.docement_id} className="result-item">
+          <li key={result.id} className="result-item">
             {/* <h3 className="result-title">{result.title}</h3> */}
             {/* <p className="result-summary">{result.summary}</p> */}
+            <p className="result-summary">{result.document_id}</p>
             <p className="result-summary">{result.content}</p>
             <button className="result-button">View Document</button>
           </li>
