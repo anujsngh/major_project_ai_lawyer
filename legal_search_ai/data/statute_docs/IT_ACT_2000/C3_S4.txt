@@ -1,0 +1,15 @@
+CHAPTER 3
+ELECTRONIC GOVERNANCE
+
+4. Legal recognition of electronic records
+
+Where any law provides that information or any other matter shall be in writing or in
+the typewritten or printed form, then, notwithstanding anything contained in such law,
+such requirement shall be deemed to have been satisfied if such information or matter is
+(a) rendered or made available in an electronic form; and
+(b) accessible so as to be usable for a subsequent reference.
+
+OBJECTS AND REASONS
+Clause 4. This clause provides that where any law requires any information or matter
+should be in the typewritten or printed form then such requirement shall be deemed to be
+satisfied if it is in an electronic form.

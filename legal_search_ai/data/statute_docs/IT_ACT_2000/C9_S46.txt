@@ -1,0 +1,43 @@
+CHAPTER 9
+PENALTIES, COMPENSATION AND ADJUDICATION
+
+46. Power to adjudicate
+
+(1) For the purpose of adjudging under this Chapter whether any person has
+committed a contravention of any of the provisions of this Act or of any rule,
+regulation, [direction or order made thereunder which renders him liable to pay
+penalty or compensation,] the Central Government shall, subject to the provisions of
+sub-section (3), appoint any officer not below the rank of a Director to the
+Government of India or an equivalent officer of a State Government to be an
+adjudicating officer for holding an inquiry in the manner prescribed by the Central
+Government.
+[(1A) The adjudicating officer appointed under sub-section (1) shall exercise
+jurisdiction to adjudicate matters in which the claim for injury or damage does not
+exceed rupees five crore :
+Provided that the jurisdiction in respect of the claim for injury or damage exceeding
+rupees five crore shall vest with the competent Court.]
+(2) The adjudicating officer shall, after giving the person referred to in sub-section
+(1) a reasonable opportunity for making representation in the matter and if, on such
+inquiry, he is satisfied that the person has committed the contravention, he may
+impose such penalty or award such compensation as he thinks fit in accordance with
+the provisions of that section.
+(3) No person shall be appointed as an adjudicating officer unless he possesses such
+experience in the field of Information Technology and legal or judicial experience as
+may be prescribed by the Central Government.
+(4) Where more than one adjudicating officers are appointed, the Central
+Government shall specify by order the matters and places with respect to which such
+officers shall exercise their jurisdiction.
+(5) Every adjudicating officer shall have the powers of a civil court which are
+conferred on the c[Appellate Tribunal] under sub-section (2) of section 58, and
+(a) all proceedings before it shall be deemed to be judicial proceedings within
+the meaning of sections 193 and 228 of the Indian Penal Code;
+(b) shall be deemed to be a civil court for the purposes of sections 345 and 346
+of the Code of Criminal Procedure, 1973.
+[(c) shall be deemed to be a civil court for purposes of Order XXI of the Civil
+Procedure Code, 1908.]
+
+OBJECTS AND REASONS
+Clause 46.This clause provides for the power to adjudicate contraventions under the
+Act by an officer not below than the rank of a Director to the Government of India or an
+equivalent officer of a State Government and for holding an enquiry in the prescribed
+manner after giving reasonable opportunity of being heard.

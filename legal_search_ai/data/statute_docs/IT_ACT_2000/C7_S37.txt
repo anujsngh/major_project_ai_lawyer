@@ -1,0 +1,22 @@
+CHAPTER 7
+[ELECTRONIC SIGNATURE] CERTIFICATES
+
+37. Suspension of Digital Signature Certificate
+
+(1) Subject to the provisions of sub-section (2), the Certifying Authority which has
+issued a Digital Signature Certificate may suspend such Digital Signature Certificate,
+(a) on receipt of a request to that effect from
+(i) the subscriber listed in the Digital Signature Certificate; or
+(ii) any person duly authorised to act on behalf of that subscriber;
+(b) if it is of opinion that the Digital Signature Certificate should be suspended
+in public interest.
+(2) A Digital Signature Certificate shall not be suspended for a period exceeding
+fifteen days unless the subscriber has been given an opportunity of being heard in
+the matter.
+(3) On suspension of a Digital Signature Certificate under this section, the Certifying
+Authority shall communicate the same to the subscriber.
+
+OBJECTS AND REASONS
+Clause 37.This clause provides for the suspension of Digital Signature Certificate
+under certain circumstances. Further, such certificate shall not be suspended for a period
+of exceeding 15 days unless the subscriber has been given an opportunity of being heard.

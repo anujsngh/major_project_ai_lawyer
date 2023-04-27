@@ -1,0 +1,19 @@
+CHAPTER 11
+OFFENCES
+
+65. Tampering with computer source documents
+
+Whoever knowingly or intentionally conceals, destroys or alters or intentionally or
+knowingly causes another to conceal, destroy or alter any computer source code used for
+a computer, computer programme, computer system or computer network, when the
+computer source code is required to be kept or maintained by law for the time being in
+force, shall be punishable with imprisonment up to three years, or with fine which may
+extend up to two lakh rupees, or with both.
+Explanation.For the purposes of this section, computer source code means the
+listing of programmes, computer commands, design and layout and programme analysis
+of computer resource in any form.
+
+OBJECTS AND REASONS
+Clause 65.This clause provides for punishment with imprisonment up to three years
+or with a fine which may extend to two lakh rupees or with both whoever knowingly or
+intentionally tampers with the computer source documents.

@@ -1,0 +1,37 @@
+CHAPTER 2
+DIGITAL SIGNATURE AND ELECTRONIC SIGNATURE
+
+3. Authentication of electronic records
+
+(1) Subject to the provisions of this section any subscriber may authenticate an
+electronic record by affixing his digital signature.
+(2) The authentication of the electronic record shall be effected by the use of
+asymmetric crypto system and hash function which envelop and transform the initial
+electronic record into another electronic record.
+Explanation.For the purposes of this sub-section, hash function means an algorithm
+mapping or translation of one sequence of bits into another, generally smaller, set known
+as hash result such that an electronic record yields the same hash result every time the
+algorithm is executed with the same electronic record as its input making it
+computationally infeasible
+(a) to derive or reconstruct the original electronic record from the hash result
+produced by the algorithm;
+(b) that two electronic records can produce the same hash result using the algorithm.
+(3) Any person by the use of a public key of the subscriber can verify the electronic
+record.
+(4) The private key and the public key are unique to the subscriber and constitute a
+functioning key pair
+
+OBJECTS AND REASONS
+Clause 3.This clause provides the conditions subject to which an electronic record
+may be authenticated by means of affixing digital signature. The digital signature is
+created in two distinct steps. First the electronic record is converted into a message digest
+by using a mathematical function known as hash function which digitally freezes the
+electronic record thus ensuring the integrity of the content of the intended communication
+contained in the electronic record. Any tampering with the contents of the electronic
+record will immediately invalidate the digital signature. Secondly the identity of the
+person affixing the digital signature is authenticated through the use of a private key
+which attaches itself to the message digest and which can be verified by anybody who
+has the public key corresponding to such private key. This will enable anybody to verify
+whether the electronic record is retained intact or has been tampered with since it was so
+fixed with the digital signature. It will also enable a person who has a public key to
+identify the originator of the message.

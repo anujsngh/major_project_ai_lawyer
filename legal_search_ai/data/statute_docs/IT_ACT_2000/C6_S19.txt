@@ -1,0 +1,21 @@
+CHAPTER 6
+REGULATION OF CERTIFYING AUTHORITIES
+
+19. Recognition of foreign Certifying Authorities
+
+(1) Subject to such conditions and restrictions as may be specified by regulations, the
+Controller may with the previous approval of the Central Government, and by
+notification in the Official Gazette, recognise any foreign Certifying Authority as a
+Certifying Authority for the purposes of this Act.
+(2) Where any Certifying Authority is recognised under sub-section (1),
+the [Electronic Signature] Certificate issued by such Certifying Authority shall be
+valid for the purposes of this Act.
+(3) The Controller may, if he is satisfied that any Certifying Authority has contravened
+any of the conditions and restrictions subject to which it was granted recognition
+under sub-section (1) he may, for reasons to be recorded in writing, by notification in
+the Official Gazette, revoke such recognition.
+
+OBJECTS AND REASONS
+Clause 19.This clause provides for the power of the Controller with the previous
+approval of the Central Government to grant recognition for foreign Certifying
+Authorities subject to such conditions and restrictions as may be imposed by regulations.

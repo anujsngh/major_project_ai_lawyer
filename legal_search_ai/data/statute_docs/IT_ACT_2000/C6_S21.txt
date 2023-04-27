@@ -1,0 +1,23 @@
+CHAPTER 6
+REGULATION OF CERTIFYING AUTHORITIES
+
+21. Licence to issue [Electronic Signature] Certificates
+
+(1) Subject to the provisions of sub-section (2), any person may make an application,
+to the Controller, for a licence to issue [Electronic Signature] Certificates.
+(2) No licence shall be issued under sub-section (1), unless the applicant fulfills such
+requirements with respect to qualification, expertise, manpower, financial resources
+and other infrastructure facilities, which are necessary to issue [Electronic Signature]
+Certificates as may be prescribed by the Central Government.
+(3) A licence granted under this section shall
+(a) be valid for such period as may be prescribed by the Central Government;
+(b) not be transferable or heritable;
+(c) be subject to such terms and conditions as may be specified by the
+regulations.
+
+OBJECTS AND REASONS
+Clause 21.This clause provides that a licence to be issued to a Certifying Authority
+to issue Digital Signature Certificates by the Controller shall be in such form and shall be
+accompanied with such fees and other documents as may be prescribed by the Central
+Government. Further, the Controller after considering the application either grant the
+licence or reject the application after giving reasonable opportunity of being heard.

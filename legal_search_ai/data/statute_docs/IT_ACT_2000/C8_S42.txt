@@ -1,0 +1,20 @@
+CHAPTER 8
+DUTIES OF SUBSCRIBERS
+
+42. Control of private key
+
+(1) Every subscriber shall exercise reasonable care to retain control of the private key
+corresponding to the public key listed in his Digital Signature Certificate and take all
+steps to prevent its disclosure
+[***].
+(2) If the private key corresponding to the public key listed in the Digital Signature
+Certificate has been compromised, then, the subscriber shall communicate the same
+without any delay to the Certifying Authority in such manner as may be specified by
+the regulations.
+Explanation.For the removal of doubts, it is hereby declared that the subscriber
+shall be liable till he has informed the Certifying Authority that the private key has been
+compromised.
+
+OBJECTS AND REASONS
+Clause 42.This clause provides that the subscriber shall exercise all reasonable care
+to retain control of his private key corresponding to the public key.

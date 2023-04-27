@@ -1,0 +1,27 @@
+CHAPTER 7
+[ELECTRONIC SIGNATURE] CERTIFICATES
+
+36. Representations upon issuance of Digital Signature Certificate
+
+A Certifying Authority while issuing a Digital Signature Certificate shall certify that
+(a) it has complied with the provisions of this Act and the rules and regulations made
+thereunder;
+(b) it has published the Digital Signature Certificate or otherwise made it available to
+such person relying on it and the subscriber has accepted it;
+(c) the subscriber holds the private key corresponding to the public key, listed in the
+Digital Signature Certificate;
+[(ca) the subscriber holds a private key which is capable of creating a digital
+signature;
+(cb) the public key to be listed in the certificate can be used to verify a digital
+signature affixed by the private key held by the subscriber;]
+(d) the subscriber’s public key and private key constitute a functioning key pair;
+(e) the information contained in the Digital Signature Certificate is accurate; and
+(f) it has no knowledge of any material fact, which if it had been included in the
+Digital Signature Certificate would adversely affect the reliability of the representations
+made in clauses (a) to (d).
+
+OBJECTS AND REASONS
+Clause 36.This clause provides for the Certifying Authority to certify while issuing a
+Digital Signature Certificate that it has complied with the provisions of the Act, the rules
+and regulations made thereunder and also with other conditions mentioned in the Digital
+Signature Certificate.

@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+
+<h5 class="mt-4 mb-2">Relevant Statutes Search Results</h5>
+
+<table class="table table-bordered" style="margin-left: auto;margin-right: auto;">
+    <tbody>
+        {% for doc in top_docs %}
+            <tr>
+                <td rowspan="8" style="text-align: center;white-space: nowrap;">S.No. {{ doc['doc_id'] }}</td>
+                <td>Court</td>
+                <td>{{ doc['content']['court'] }}</td>
+                <td width="20%">Judgement</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Case Number</td>
+                <td>{{ doc['content']['case_num'] }}</td>
+                <td rowspan="5"><a href="#" target="_blank"></a><a href="#" target="_blank">Details</a><br></td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Title</td>
+                <td>{{ doc['content']['title'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Date of Judgment</td>
+                <td>{{ doc['content']['judge_date'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Petitioner Name</td>
+                <td>{{ doc['content']['pet_name'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Respondent Name</td>
+                <td>{{ doc['content']['resp_name'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Judgment By</td>
+                <td>{{ doc['content']['judge_by'] }}</td>
+            </tr>
+            <tr>
+                <td colspan="4"></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+    
+{% endblock %}

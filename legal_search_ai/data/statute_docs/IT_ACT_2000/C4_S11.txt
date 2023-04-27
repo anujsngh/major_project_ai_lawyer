@@ -1,0 +1,15 @@
+CHAPTER 4
+ATTRIBUTION, ACKNOWLEDGMENT AND DESPATCH OF ELECTRONIC RECORDS
+
+11. Attribution of electronic records
+
+An electronic record shall be attributed to the originator
+(a) if it was sent by the originator himself;
+(b) by a person who had the authority to act on behalf of the originator in respect of
+that electronic record; or
+(c) by an information system programmed by or on behalf of the originator to
+automatically.
+
+OBJECTS AND REASONS
+Clause 11.This clause deals with the attribution of the electronic records to the
+originator.

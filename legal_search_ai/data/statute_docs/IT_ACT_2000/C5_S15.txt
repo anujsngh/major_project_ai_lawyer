@@ -1,0 +1,16 @@
+CHAPTER 5
+SECURE ELECTRONIC RECORDS AND SECURE [ELECTRONIC SIGNATURES]
+
+15. Secure electronic signature
+
+An electronic signature shall be deemed to be a secure electronic signature if-
+(i) the signature creation data, at the time of affixing signature, was under the
+exclusive control of signatory and no other person; and
+(ii) the signature creation data was stored and affixed in such exclusive manner as
+may be prescribed.
+Explanation.In case of digital signature, the signature creation data means the
+private key of the subscriber.
+
+OBJECTS AND REASONS
+Clause 15.This clause provides for the security procedure to be applied to Digital
+Signatures for being treated as a secure digital signature.
