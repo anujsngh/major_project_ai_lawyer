@@ -1,0 +1,28 @@
+CHAPTER 3
+ELECTRONIC GOVERNANCE
+
+6. Use of electronic records and electronic signature in Government and its agencies
+
+(1) Where any law provides for
+(a) the filing of any form, application or any other document with any office,
+authority, body or agency owned or controlled by the appropriate Government in a
+particular manner;
+(b) the issue or grant of any licence, permit, sanction or approval by whatever
+name called in a particular manner;
+(c) the receipt or payment of money in a particular manner, then,
+notwithstanding anything contained in any other law for the time being in force, such
+requirement shall be deemed to have been satisfied if such filing, issue, grant, receipt
+or payment, as the case may be, is effected by means of such electronic form as may
+be prescribed by the appropriate Government.
+(2) The appropriate Government may, for the purposes of sub-section (1), by rules,
+prescribe
+(a) the manner and format in which such electronic records shall be filed,
+created or issued;
+(b) the manner or method of payment of any fee or charges for filing, creation or
+issue any electronic record under clause (a).
+
+OBJECTS AND REASONS
+Clause 6.This clause lays down the foundation of Electronic Governance. The filing
+of any form, application or other documents, creation, retention or preservation of
+records, issue or grant of any licence or permit or receipt or payment in Government
+offices and its agencies may be done through the means of electronic form.

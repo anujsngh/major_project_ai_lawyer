@@ -1,0 +1,20 @@
+CHAPTER 6
+REGULATION OF CERTIFYING AUTHORITIES
+
+30. Certifying Authority to follow certain procedures
+Every Certifying Authority shall,
+(a) make use of hardware, software and procedures that are secure from intrusion
+and misuse;
+(b) provide a reasonable level of reliability in its services which are reasonably
+suited to the performance of intended functions;
+(c) adhere to security procedures to ensure that the secrecy and privacy of
+the [electronic signature] are assured;
+[ x x x ]
+[(ca) be the repository of all Electronic Signature Certificates issued under this Act;
+(cb) publish information regarding its practices, Electronic Signature Certificates and
+current status of such certificates; and]
+(d) observe such other standards as may be specified by regulations.
+
+OBJECTS AND REASONS
+Clause 30.This clause provides for the Certifying Authority to follow certain
+procedure in respect of Digital Signatures.

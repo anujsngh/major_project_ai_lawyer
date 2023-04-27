@@ -1,0 +1,16 @@
+CHAPTER 7
+[ELECTRONIC SIGNATURE] CERTIFICATES
+
+39. Notice of suspension or revocation
+
+(1) Where a Digital Signature Certificate is suspended or revoked under section 37 or
+section 38, the Certifying Authority shall publish a notice of such suspension or
+revocation, as the case may be, in the repository specified in the Digital Signature
+Certificate for publication of such notice.
+(2) Where one or more repositories are specified, the Certifying Authority shall
+publish notices of such suspension or revocation, as the case may be, in all such
+repositories.
+
+OBJECTS AND REASONS
+Clause 39.This clause provides that the Certifying Authority shall publish the
+suspension or revocation of a Digital Signature Certificate in the depository.

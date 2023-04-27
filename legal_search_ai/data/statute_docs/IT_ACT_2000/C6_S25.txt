@@ -1,0 +1,30 @@
+CHAPTER 6
+REGULATION OF CERTIFYING AUTHORITIES
+
+25. Suspension of licence
+
+(1) The Controller may, if he is satisfied after making such inquiry, as he may think
+fit, that a Certifying Authority has,
+(a) made a statement in, or in relation to, the application for the issue or renewal
+of the licence, which is incorrect or false in material particulars;
+(b) failed to comply with the terms and conditions subject to which the licence
+was granted;
+[(c) failed to maintain the procedures and standards specified in section 30;"];
+(d) contravened any provisions of this Act, rule, regulation or order made
+thereunder, revoke the licence :
+Provided that no licence shall be revoked unless the Certifying Authority has been
+given a reasonable opportunity of showing cause against the proposed revocation.
+(2) The Controller may, if he has reasonable cause to believe that there is any ground
+for revoking a licence under sub-section (1), by order suspend such licence pending
+the completion of any inquiry ordered by him :
+Provided that no licence shall be suspended for a period exceeding ten days unless
+the Certifying Authority has been given a reasonable opportunity of showing cause
+against the proposed suspension.
+(3) No Certifying Authority whose licence has been suspended shall issue
+any [Electronic Signature] Certificate during such suspension.
+
+OBJECTS AND REASONS
+Clause 25.This clause provides for suspension of licence on the grounds such as
+incorrect or false material particulars being mentioned in the application and also on the
+ground of contravention of any provisions of the Act, rule, regulation or order made
+thereunder.

@@ -1,0 +1,15 @@
+CHAPTER 11
+OFFENCES
+
+74. Publication for fraudulent purpose
+
+Whoever knowingly creates, publishes or otherwise makes available [Electronic
+Signature] Certificate for any fraudulent or unlawful purpose shall be punished with
+imprisonment for a term which may extend to two years, or with fine which may extend
+to one lakh rupees, or with both.
+
+OBJECTS AND REASONS
+Clause 73.This clause provides for punishment with imprisonment for a term which
+may extend to two years or with fine which may extend to one lakh rupees or with both to
+a person whoever knowingly publishes for fraudulent purpose any Digital Signature
+Certificate.

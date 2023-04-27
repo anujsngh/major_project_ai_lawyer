@@ -1,0 +1,15 @@
+CHAPTER 5
+SECURE ELECTRONIC RECORDS AND SECURE [ELECTRONIC SIGNATURES]
+
+16. Security procedures and practices
+
+The Central Government may, for the purposes of sections 14 and 15, prescribe the
+security procedures and practices :
+Provided that in prescribing such security procedures and practices, the Central
+Government shall have regard to the commercial circumstances, nature of transactions
+and such other related factors as it may consider appropriate.
+
+OBJECTS AND REASONS
+Clause 16.This clause provides for the power of the Central Government to
+prescribe the security procedure in respect of secure electronic records and secure digital
+signatures.

@@ -1,0 +1,20 @@
+CHAPTER 3
+ELECTRONIC GOVERNANCE
+
+Legal recognition of [electronic signature]
+
+Where any law provides that information or any other matter shall be authenticated
+by affixing the signature or any document shall be signed or bear the signature of any
+person then, notwithstanding anything contained in such law, such requirement shall be
+deemed to have been satisfied, if such information or matter is authenticated by means
+of [electronic signature] affixed in such manner as may be prescribed by the Central
+Government.
+Explanation.For the purposes of this section, signed, with its grammatical variations
+and cognate expressions, shall, with reference to a person, mean affixing of his hand
+written signature or any mark on any document and the expression signature shall be
+construed accordingly.
+
+OBJECTS AND REASONS
+Clause 5.This clause provides for legal recognition of Digital Signatures. It shall be
+authenticated by means of Digital Signatures affixed in such manner as may be
+prescribed by the Central Government.

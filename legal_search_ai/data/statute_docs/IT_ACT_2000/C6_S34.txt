@@ -1,0 +1,26 @@
+CHAPTER 6
+REGULATION OF CERTIFYING AUTHORITIES
+
+34. Disclosure
+
+(1) Every Certifying Authority shall disclose in the manner specified by regulations
+(a) its [Electronic Signature] Certificate [ x x x ];
+(b) any certification practice statement relevant thereto;
+(c) notice of the revocation or suspension of its Certifying Authority certificate,
+if any; and
+(d) any other fact that materially and adversely affects either the reliability of
+a [Electronic Signature] Certificate, which that Authority has issued, or the
+Authority’s ability to perform its services.
+(2) Where in the opinion of the Certifying Authority any event has occurred or any
+situation has arisen which may materially and adversely affect the integrity of its
+computer system or the conditions subject to which a [Electronic Signature]
+Certificate was granted, then, the Certifying Authority shall
+(a) use reasonable efforts to notify any person who is likely to be affected by
+that occurrence; or
+(b) act in accordance with the procedure specified in its certification practice
+statement to deal with such event or situation.
+
+OBJECTS AND REASONS
+Clause 34.This clause provides that every Certifying Authority shall disclose its
+Digital Signature Certificate which contains public key corresponding to the private key
+used by that Certifying Authority and other relevant facts.

@@ -1,0 +1,13 @@
+CHAPTER 8
+DUTIES OF SUBSCRIBERS
+
+40. Generating key pair
+
+Where any Digital Signature Certificate, the public key of which corresponds to the
+private key of that subscriber which is to be listed in the Digital Signature Certificate has
+been accepted by a subscriber, [***], the subscriber shall generate [that key] pair by
+applying the security procedure.
+
+OBJECTS AND REASONS
+Clause 40.This clause provides that the subscriber shall generate a key pair using a
+secure system.

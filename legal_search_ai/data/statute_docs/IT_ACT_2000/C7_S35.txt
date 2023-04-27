@@ -1,0 +1,26 @@
+CHAPTER 7
+[ELECTRONIC SIGNATURE] CERTIFICATES
+
+35. Certifying Authority to issue [Electronic Signature] Certificate
+
+Certifying Authority to issue [Electronic Signature] Certificate. (1) Any person may
+make an application to the Certifying Authority for the issue of [Electronic Signature]
+Certificate in such form as may be prescribed by the Central Government.
+(2) Every such application shall be accompanied by such fee not exceeding twenty five thousand rupees as may be prescribed by the Central Government, to be paid to the
+Certifying Authority :
+Provided that while prescribing fees under sub-section (2) different fees may be
+prescribed for different classes of applicants.
+(3) Every such application shall be accompanied by a certification practice statement
+or where there is no such statement, a statement containing such particulars, as may be
+specified by regulations.
+(4) On receipt of an application under sub-section (1), the Certifying Authority may,
+after consideration of the certification practice statement or the other statement under
+sub-section (3) and after making such enquiries as it may deem fit, grant the [Electronic
+Signature] Certificate or for reasons to be recorded in writing, reject the application.
+[ x x x x x x ]
+[Provided] that no application shall be rejected unless the applicant has been given
+a reasonable opportunity of showing cause against the proposed rejection.
+
+OBJECTS AND REASONS
+Clause 35.This clause deals with the form in which Digital Signature Certificate
+may be issued by a Certifying Authority.

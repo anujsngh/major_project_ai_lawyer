@@ -1,0 +1,17 @@
+CHAPTER 3
+ELECTRONIC GOVERNANCE
+
+10. Power to make rules by Central Government in respect of [electronic signature]
+
+The Central Government may, for the purposes of this Act, by rules, prescribe
+(a) the type of [electronic signature];
+(b) the manner and format in which the [electronic signature] shall be affixed;
+(c) the manner or procedure which facilitates identification of the person affixing
+the [electronic signature];
+(d) control processes and procedures to ensure adequate integrity, security and
+confidentiality of electronic records or payments; and
+(e) any other matter which is necessary to give legal effect to [electronic signature].
+
+OBJECTS AND REASONS
+Clause 10.This clause provides for the power to make rules by the Central
+Government, in respect of Digital Signature.

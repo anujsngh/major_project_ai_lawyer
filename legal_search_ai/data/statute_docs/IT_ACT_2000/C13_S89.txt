@@ -1,0 +1,38 @@
+CHAPTER 13
+MISCELLANEOUS
+
+89. Power of Controller to make regulations
+
+(1) The Controller may, after consultation with the Cyber Regulations Advisory
+Committee and with the previous approval of the Central Government, by notification
+in the Official Gazette, make regulationsa consistent with this Act and the rules made
+thereunder to carry out the purposes of this Act.
+(2) In particular, and without prejudice to the generality of the foregoing power, such
+regulations may provide for all or any of the following matters, namely :
+(a) the particulars relating to maintenance of data-base containing the disclosure
+record of every Certifying Authority under clauseb
+[(n)] of section 18;
+(b) the conditions and restrictions subject to which the Controller may recognise
+any foreign Certifying Authority under sub-section (1) of section 19;
+(c) the terms and conditions subject to which a licence may be granted under
+clause (c) of sub-section (3) of section 21;
+(d) other standards to be observed by a Certifying Authority under clause (d) of
+section 30;
+(e) the manner in which the Certifying Authority shall disclose the matters
+specified in sub-section (1) of section 34;
+(f) the particulars of statement which shall accompany an application under subsection (3) of section 35;
+(g) the manner in which the subscriber shall communicate the compromise of
+private key to the certifying Authority under sub-section (2) of section 42.
+(3) Every regulation made under this Act shall be laid, as soon as may be after it is
+made, before each House of Parliament, while it is in session, for a total period of
+thirty days which may be comprised in one session or in two or more successive
+sessions, and if, before the expiry of the session immediately following the session or
+the successive sessions aforesaid, both Houses agree in making any modification in
+the regulation or both Houses agree that the regulation should not be made, the
+regulation shall thereafter have effect only in such modified form or be of no effect,
+as the case may be; so, however, that any such modification or annulment shall be
+without prejudice to the validity of anything previously done under that regulation.
+
+OBJECTS AND REASONS
+Clause 88.This clause provides for power to the Controller to make regulations
+under the Act.

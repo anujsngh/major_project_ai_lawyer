@@ -1,0 +1,24 @@
+CHAPTER 11
+OFFENCES
+
+73. Penalty for publishing 
+
+a [Electronic Signature] Certificate false in certain particulars.
+(1) No person shall
+publish a[Electronic Signature] Certificate or otherwise make it available to any other
+person with the knowledge that
+(a) the Certifying Authority listed in the certificate has not issued it; or
+(b) the subscriber listed in the certificate has not accepted it; or
+(c) the certificate has been revoked or suspended,
+unless such publication is for the purpose of verifyinga
+[electronic signature]
+created prior to such suspension or revocation.
+(2) Any person who contravenes the provisions of sub-section (1) shall be punished
+with imprisonment for a term which may extend to two years, or with fine which may
+extend to one lakh rupees, or with both.
+
+OBJECTS AND REASONS
+Clause 72.This clause provides punishment for publishing a Digital Signature
+Certificate false in material particulars or otherwise making it available to any other
+person with imprisonment for a term which may extend to two years or with fine which
+may extend to one lakh rupees or with both.

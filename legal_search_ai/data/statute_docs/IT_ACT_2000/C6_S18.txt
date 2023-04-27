@@ -1,0 +1,34 @@
+CHAPTER 6
+REGULATION OF CERTIFYING AUTHORITIES
+
+18. Functions of Controller
+
+The Controller may perform all or any of the following functions, namely :
+(a) exercising supervision over the activities of the Certifying Authorities;
+(b) certifying public keys of the Certifying Authorities;
+(c) laying down the standards to be maintained by the Certifying Authorities;
+(d) specifying the qualifications and experience which employees of the Certifying
+Authorities should possess;
+(e) specifying the conditions subject to which the Certifying Authorities shall
+conduct their business;
+(f) specifying the contents of written, printed or visual materials and advertisements
+that may be distributed or used in respect of [Electronic Signature] Certificate and the public key;
+(g) specifying the form and content of [Electronic Signature] Certificate and the key;
+(h) specifying the form and manner in which accounts shall be maintained by the
+Certifying Authorities;
+(i) specifying the terms and conditions subject to which auditors may be appointed
+and the remuneration to be paid to them;
+(j) facilitating the establishment of any electronic system by a Certifying Authority
+either solely or jointly with other Certifying Authorities and regulation of such systems;
+(k) specifying the manner in which the Certifying Authorities shall conduct their
+dealings with the subscribers;
+(l) resolving any conflict of interests between the Certifying Authorities and the
+subscribers;
+(m) laying down the duties of the Certifying Authorities;
+(n) maintaining a data base containing the disclosure record of every Certifying
+Authority containing such particulars as may be specified by regulations, which shall be
+accessible to public.
+
+OBJECTS AND REASONS
+Clause 18.This clause provides for the functions of the Controller in respect of
+activities of Certifying Authorities which may be prescribed by regulations.

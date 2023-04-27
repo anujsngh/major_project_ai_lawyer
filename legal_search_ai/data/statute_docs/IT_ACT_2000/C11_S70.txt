@@ -1,0 +1,25 @@
+CHAPTER 11
+OFFENCES
+
+70. Protected system
+
+(1) The appropriate Government may, by notification in the Official Gazette, declare
+any computer resource which directly or indirectly affects the facility of Critical
+Information Infrastructure, to be a protected system.
+Explanation.For the purposes of this section, Critical Information Infrastructure
+means the computer resource, the incapacitation or destruction of which, shall have
+debilitating impact on national security, economy, public health or safety.]
+(2) The appropriate Government may, by order in writing, authorise the persons who
+are authorised to access protected systems notified under sub-section (1).
+(3) Any person who secures access or attempts to secure access to a protected system
+in contravention of the provisions of this section shall be punished with imprisonment of
+either description for a term which may extend to ten years and shall also be liable to
+fine. 
+[(4) The Central Government shall prescribe the information security practices and
+procedures for such protected system.]
+
+OBJECTS AND REASONS
+Clause 69.This clause empowers the appropriate Government by notification to
+declare any computer, computer system or computer network to be a protected system.
+Any unauthorised access of such systems will be punishable with imprisonment which
+may extend to ten years or with fine.
