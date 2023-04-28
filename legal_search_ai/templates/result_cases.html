@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+{% block content %}
+
+
+
+<h5 class="mt-4 mb-2">Case Search</h5>
+
+<table class="table table-bordered" style="margin-left: auto;margin-right: auto;">
+    <tbody>
+        {% for title, url in urls.items() %}
+            <tr style="height:100%;">
+                <td style="text-align: center;"><strong><a href="{{ url }}">{{ title }}</a></strong></td>
+            </tr>
+            <tr>
+                <td colspan="1"></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+    
+{% endblock %}

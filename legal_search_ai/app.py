@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template, redirect, url_for
-from main import rel_cases_search, rel_statutes_search
+from main import *
 import logging
 import json
 
@@ -15,7 +15,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 @app.route('/home', methods=['GET'])
 def home():
-    return render_template("index.html", request=request)
+    return render_template("home.html", request=request)
 
 
 
@@ -40,20 +40,25 @@ def search_rel_cases():
 def search_rel_statutes():
     if request.method == "POST":
         rel_statutes_query = request.form.get("query")
-        statutes = rel_statutes_search(rel_statutes_query)
-        return statutes
-        # return render_template("result_rel_cases.html", top_docs=top_docs)
+        top_docs = rel_statutes_search(rel_statutes_query)
+        # return statutes
+        return render_template("result_rel_statutes.html", top_docs=top_docs)
     return render_template("search_rel_statutes.html")
 
 
 @app.route('/search/statute', methods=['GET', 'POST'])
 def search_statute():
-    return redirect(url_for('home'))
+    if request.method == "POST":
+        statutes_query = request.form.get("query")
+        top_docs = statute_search(statutes_query)
+        return render_template("result_statutes.html", top_docs=top_docs)
+    return render_template("search_statutes.html")
 
 
 @app.route('/search/case', methods=['GET', 'POST'])
 def search_case():
-    return redirect(url_for('home'))
+    judgement_urls = case_search()
+    return render_template("result_cases.html", urls=judgement_urls)
 
 
 
