@@ -41,8 +41,12 @@ def get_section_details(section_num):
 
 def extract_sections(query):
     # Define regex patterns for each format
-    pattern_00 = r'(\w+)'
-    pattern_0 = r'[sS]ection\s+(\w+)'
+
+# =================================Not needed========================================================================
+    # pattern_00 = r'(\w+)'
+    # pattern_0 = r'[sS]ection\s+(\w+)'
+# ===================================================================================================================
+
     pattern_1 = r'[sS]ection\s+(\w+)\s+of\s+the\s+\w+'
     pattern_2 = r'(\w+)\s+and\s+(\w+)\s+of\s+the\s+\w+'
     pattern_3 = r'(\w+),\s*(\w+)\s+and\s+(\w+)\s+of\s+the\s+\w+'
@@ -88,16 +92,18 @@ def extract_sections(query):
         match = match[0].split(",")
         section_numbers += match
 
-    if len(section_numbers) == 0:
-        # Extract section numbers from input string 1 using pattern 00
-        match = re.search(pattern_00, query)
-        if match:
-            section_numbers.append(match.group(1))
+# =================================Not needed========================================================================
+    # if len(section_numbers) == 0:
+    #     # Extract section numbers from input string 1 using pattern 00
+    #     match = re.search(pattern_00, query)
+    #     if match:
+    #         section_numbers.append(match.group(1))
 
-        # Extract section numbers from input string 1 using pattern 0
-        match = re.search(pattern_0, query)
-        if match:
-            section_numbers.append(match.group(1))
+    #     # Extract section numbers from input string 1 using pattern 0
+    #     match = re.search(pattern_0, query)
+    #     if match:
+    #         section_numbers.append(match.group(1))
+# ===================================================================================================================
 
     # Return the section numbers extracted from each input string
     logging.debug(section_numbers)
