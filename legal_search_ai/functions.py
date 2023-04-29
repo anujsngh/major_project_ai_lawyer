@@ -42,11 +42,12 @@ def get_section_details(section_num):
 def extract_sections(query):
     # Define regex patterns for each format
     pattern_00 = r'(\w+)'
-    pattern_0 = r'Section\s+(\w+)'
-    pattern_1 = r'Section\s+(\w+)\s+of\s+the\s+\w+'
+    pattern_0 = r'[sS]ection\s+(\w+)'
+    pattern_1 = r'[sS]ection\s+(\w+)\s+of\s+the\s+\w+'
     pattern_2 = r'(\w+)\s+and\s+(\w+)\s+of\s+the\s+\w+'
     pattern_3 = r'(\w+),\s*(\w+)\s+and\s+(\w+)\s+of\s+the\s+\w+'
     pattern_4 = r'(\w+)\s+to\s+(\w+)\s+of\s+the\s+\w+'
+    pattern_5 = r'(?:[sS]ection\s+)?(\d+[A-Z]*(?:,\d+[A-Z]*)*)' # Section 19,20,43A OR 19,20,43A
 
     # Define a list to hold the section numbers from each input string
     section_numbers = []
@@ -80,6 +81,12 @@ def extract_sections(query):
         start_index = section_list.index(start_section)
         end_index = section_list.index(end_section)
         section_numbers += section_list[start_index:end_index+1]
+
+    # Extract section numbers from input string 5 using pattern 5
+    match = re.findall(pattern_5, query)
+    if match:
+        match = match[0].split(",")
+        section_numbers += match
 
     if len(section_numbers) == 0:
         # Extract section numbers from input string 1 using pattern 00
