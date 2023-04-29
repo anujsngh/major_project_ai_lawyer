@@ -42,8 +42,8 @@ def get_section_details(section_num):
 def extract_sections(query):
     # Define regex patterns for each format
     pattern_00 = r'(\w+)'
-    pattern_0 = r'Section\s+(\w+)'
-    pattern_1 = r'Section\s+(\w+)\s+of\s+the\s+\w+'
+    pattern_0 = r'[sS]ection\s+(\w+)'
+    pattern_1 = r'[sS]ection\s+(\w+)\s+of\s+the\s+\w+'
     pattern_2 = r'(\w+)\s+and\s+(\w+)\s+of\s+the\s+\w+'
     pattern_3 = r'(\w+),\s*(\w+)\s+and\s+(\w+)\s+of\s+the\s+\w+'
     pattern_4 = r'(\w+)\s+to\s+(\w+)\s+of\s+the\s+\w+'
