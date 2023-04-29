@@ -96,10 +96,12 @@ df = pd.DataFrame(cases)
 
 df = df.dropna(how='all')
 
+df = df.reset_index(drop=True)
+
 for i in range(25):
     # Wait for a specific element to appear on the new page
     try:
-        element = WebDriverWait(driver, 15).until(
+        open_button = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, f"link_{i}"))
         )
         # We found url of case
@@ -107,31 +109,21 @@ for i in range(25):
         # We didn't found url, something went wrong
         print('Error: Unable to find url of case')
 
-    # check if there are any other elements blocking the element to click on
-    blocking_element = driver.find_element(By.ID, 'modal_close')
-    if blocking_element.is_displayed():
-        # move the mouse to the blocking element to interact with it and remove it
-        action = ActionChains(driver)
-        action.move_to_element(blocking_element).click().perform()
-
-    # Create ActionChains object
-    actions = ActionChains(driver)
-
-    # wait for element to become clickable
-    open_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, f"link_{i}")))
-
     try:
-        # Move to the element and perform click action using ActionChains
-        actions.move_to_element(open_button).click().perform()
-    except:
-        driver.execute_script("arguments[0].scrollIntoView();", open_button)
-        driver.execute_script("window.scrollBy(0, 1000);")
-        # click on element
-        open_button.click()
+        # find the element we want to click on
+        open_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.ID, f"link_{i}")))
 
-        # Click on the button to open the pop-up
-        # open_button = driver.find_element(By.ID, f"link_{i}")
-        # open_button.click()
+        # scroll the page to bring the element into view
+        driver.execute_script("arguments[0].scrollIntoView();", open_button)
+
+        # click on the element
+        open_button.click()
+    except:
+        driver.execute_script("arguments[0].click();", open_button)
+        print('Error: Button is not clickable!')
+
+    # # Click on the button to open the pop-up
+    # open_button.click()
 
     time.sleep(5)
 
@@ -144,13 +136,9 @@ for i in range(25):
         pdf_url = data_value
     filename = os.path.basename(data_value)
 
-    directory_path = "data/case_docs/IT_ACT_2000"
+    directory_path = "./data/case_docs/IT_ACT_2000"
     pdf_path = os.path.join(directory_path, filename)
 
-    # Click on the button to open the pop-up
-    close_button = driver.find_element(By.ID, "modal_close")
-    close_button.click()
-    
     # Download the PDF
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
@@ -159,10 +147,12 @@ for i in range(25):
 
     df.loc[i, "pdf"] = filename
 
-    time.sleep(5)
+    # Click on the button to open the pop-up
+    close_button = driver.find_element(By.ID, "modal_close")
+    close_button.click()
 
 
-df.to_csv("data/case_docs/case_pdfs.csv")
+df.to_csv("./data/case_docs/case_pdfs.csv")
 
 
 # Close the window and quit the driver
