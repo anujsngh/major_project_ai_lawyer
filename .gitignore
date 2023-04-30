@@ -11,6 +11,8 @@
 # production
 /build
 
+/case_docs/All/
+
 # misc
 .DS_Store
 .env.local
@@ -21,12 +23,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-.txt
-
-/backend/case_docs
-/backend/env
-/backend/__pycache__
 
 
 # Byte-compiled / optimized / DLL files

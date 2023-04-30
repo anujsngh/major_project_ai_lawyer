@@ -1,3 +1,7 @@
+import os
+
+cwd = os.getcwd()
+
 section_order_dict = {
     '1': 1,
     '2': 2,

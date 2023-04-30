@@ -23,7 +23,7 @@ from functions import *
 
 def load_raw_docs(doc_type):
     if doc_type == "Case":
-        files_directory = "data/case_docs"
+        files_directory = "data/case_docs/All"
     elif doc_type == "Statute":
         files_directory = "data/statute_docs/IT_ACT_2000"
     
