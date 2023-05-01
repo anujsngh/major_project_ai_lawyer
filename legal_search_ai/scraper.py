@@ -10,6 +10,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from urllib.parse import urljoin
 import time
+import sys
+import logging
 import os
 import urllib
 import pandas as pd
@@ -32,7 +34,7 @@ if not os.path.exists(data_dir_path):
 def select_25_cases(driver):
     # Wait for a specific element to appear on the new page
     try:
-        dropdown_element = WebDriverWait(driver, 10).until(
+        dropdown_element = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.XPATH, '//*[@id="example_pdf_length"]/label/select'))
         )
         # We are on a new page, continue with the scraping process
@@ -70,12 +72,25 @@ def scrap_cases():
     search_elem = driver.find_element(By.ID, 'search_text')
     search_elem.send_keys("The Information Technology Act")
 
+    # # Get the handle of the current window
+    # window_handle = driver.current_window_handle
+    # # Switch to the window by handle and bring it to front
+    # driver.switch_to.window(window_handle)
+    # driver.execute_script("window.focus();")
+
+    flag = 1
+    s_t = time.time()
     while True:
-        s_t = time.time()
         # find the input box by id
-        input_box = driver.find_element(By.ID, "captcha")
+        input_field = driver.find_element(By.ID, "captcha")
+        if flag:
+            # Move the cursor to the input field
+            # input_field.click()
+            input_field.send_keys(Keys.HOME)
+            # driver.execute_script("arguments[0].click();", input_field)
+            flag = 0
         # get the value of the input box
-        value = input_box.get_attribute("value")
+        value = input_field.get_attribute("value")
         if len(value) == 6:
             # input box is filled
             submit_btn = driver.find_element(By.ID, 'main_search')
@@ -85,14 +100,18 @@ def scrap_cases():
             # input box is empty
             print("Input box is empty")
             time.sleep(2)
+        
         e_t = time.time() - s_t
-        if e_t >= 10:
-            notification.notify(title='Title', message='Message')
+        if (e_t >= 10) and (e_t%5==0):
+            notification.notify(title='Critical Alert!!!', message='Fill Captcha to Resume Scraping')
             playsound('data/alert.wav')
 
-
+    # # Switch to the window by handle and send it to the background
+    # driver.switch_to.window(window_handle)
+    # driver.execute_script("window.blur();")
+    
     # Pause the script for 10 seconds
-    time.sleep(10)
+    time.sleep(5)
 
     # define the highest index
     max_index = - 1
@@ -111,15 +130,15 @@ def scrap_cases():
     for _ in range(pages_to_traverse):
         select_25_cases(driver)
         # Find the btn element and click to go to next page
-        next_btn = WebDriverWait(driver, 10).until(
+        next_btn = WebDriverWait(driver, 15).until(
             EC.presence_of_element_located((By.ID, 'example_pdf_next'))
         )
         driver.execute_script("arguments[0].click();", next_btn)
+        time.sleep(5)
 
     select_25_cases(driver)
 
     time.sleep(10)
-
 
     table = driver.find_element(By.ID, "example_pdf")
     table_html = table.get_attribute('outerHTML')
@@ -202,8 +221,10 @@ def scrap_cases():
         close_button = driver.find_element(By.ID, "modal_close")
         driver.execute_script("arguments[0].click();", close_button)
 
+        # df.to_csv(os.path.join("/data/temp", "case_pdfs.csv"))
+
     try:
-        final_df = org_df.concat([org_df, df], ignore_index=True)
+        final_df = pd.concat([org_df, df], ignore_index=True)
         final_df.to_csv(os.path.join(data_dir_path, "case_pdfs.csv"))
     except NameError:
         df.to_csv(os.path.join(data_dir_path, "case_pdfs.csv"))
@@ -231,6 +252,11 @@ def remove_extra_files():
 
 
 if __name__ == "__main__":
-    for _ in range(10):
-        # remove_extra_files()
-        scrap_cases()
+    while True:
+        # # remove_extra_files()  # # dengerously dengerous
+
+        # implement a temp storage using a temp/case_pdfs.csv file and add it's content in case of any failure.
+        try:
+            scrap_cases()
+        except:
+            logging.debug("Error:", sys.exc_info()[0])
