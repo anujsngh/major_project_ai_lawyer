@@ -17,11 +17,12 @@
             <tr style="height:100%;">
                 <td>Chapter {{ doc['content']['chapter_num'] }}</td>
                 <td>{{ doc['content']['chapter_title'] }}</td>
-                <td rowspan="3"><a href="#" target="_blank"></a><a href="{{ doc['content']['section_url'] }}" target="_blank">Section {{ doc['content']['section_num'] }} of {{ doc['content']['act'] }}</a><br></td>
+                <td rowspan="1"><a href="#" target="_blank"></a><a href="{{ doc['content']['section_url'] }}" target="_blank">View on IndiaCode</a><br></td>
             </tr>
             <tr style="height:100%;">
                 <td>Section <strong>{{ doc['content']['section_num'] }}</strong></td>
                 <td>{{ doc['content']['section_title'] }}</td>
+                <td rowspan="2"><a href="{{ url_for('serve_text', path=doc['content']['pdf_url']) }}" target="_blank">View PDF</a></td>
             </tr>
             <tr style="height:100%;">
                 <td>Details</td>

@@ -168,7 +168,7 @@ def scrap_cases():
     # append the second DataFrame to the first one
     df = pd.DataFrame(cases)
 
-    df = df.dropna(how='all')
+    df = df.dropna(axis=0, how='all')
 
     df = df.reset_index(drop=True)
 
@@ -225,6 +225,7 @@ def scrap_cases():
 
     try:
         final_df = pd.concat([org_df, df], ignore_index=True)
+        # final_df.dropna(axis=1, how="any")
         final_df.to_csv(os.path.join(data_dir_path, "case_pdfs.csv"))
     except NameError:
         df.to_csv(os.path.join(data_dir_path, "case_pdfs.csv"))
@@ -236,26 +237,30 @@ def scrap_cases():
     driver.close()
     driver.quit()
 
-def remove_extra_files():
+def remove_extra_pdf_files():
     # specify the file path of the PDF file to be deleted
     try:
         df = pd.read_csv(os.path.join(data_dir_path, "case_pdfs.csv"))
     except:
         return
-    df_pdf_files = df["pdf"]
+    df_pdf_files = set(df["pdf"].astype(str))
+    # print(df_pdf_files)
     dir_pdf_files = [f for f in os.listdir(data_dir_path) if f.endswith('.pdf')]
+    # print(dir_pdf_files)
+    count = 0
     for dir_pdf_file in dir_pdf_files:
         if dir_pdf_file not in df_pdf_files:
             file_path = os.path.join(data_dir_path, dir_pdf_file)
             # delete the file
             os.remove(file_path)
+            count += 1
+    print(f"{count} extra pdf files removed.")
 
 
 if __name__ == "__main__":
     while True:
-        # # remove_extra_files()  # # dengerously dengerous
-
-        # implement a temp storage using a temp/case_pdfs.csv file and add it's content in case of any failure.
+        remove_extra_pdf_files()
+        # # implement a temp storage using a temp/case_pdfs.csv file and add it's content in case of any failure.
         try:
             scrap_cases()
         except:

@@ -13,6 +13,7 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import csv
 import PyPDF2
+import pickle
 from functions import *
 
 
@@ -21,7 +22,7 @@ from functions import *
 # nltk.download('wordnet')
 
 
-def load_raw_docs(doc_type):
+def load_txt_docs(doc_type):
     if doc_type == "Case":
         files_directory = "data/case_docs/All"
     elif doc_type == "Statute":
@@ -38,34 +39,43 @@ def load_raw_docs(doc_type):
     return documents
 
 
+def load_pdf_docs(doc_type):
+    if doc_type == "Case":
+        files_directory = "data/case_docs/IT_ACT_2000"
+    elif doc_type == "Statute":
+        files_directory = "data/statute_docs/IT_ACT_2000"
+    
+    # Read case details from text files and store in a list
+    documents = []
+    for file_name in os.listdir(files_directory):
+        if file_name.endswith('.pdf'):
+            content = extract_pdf_text(pdf_file_path=os.path.join(files_directory, file_name))
+            documents.append(content)
+    return documents
+
+
 def store_preprocessed_docs(documents, doc_type):
     preprocessed_docs = [preprocess_text(text=doc) for doc in documents]
 
     if doc_type == "Case":
-        docs_path = 'data/temp/case/preprocessed_docs.csv'
+        docs_path = 'data/temp/case/preprocessed_docs.pkl'
     elif doc_type == "Statute":
-        docs_path = 'data/temp/statute/preprocessed_docs.csv'
+        docs_path = 'data/temp/statute/preprocessed_docs.pkl'
 
-    with open(docs_path, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.writer(f)
-        for doc in preprocessed_docs:
-            writer.writerow([doc])
+    with open(docs_path, 'wb') as f:
+        pickle.dump(preprocessed_docs, f)
     
     return preprocessed_docs
 
 
 def load_preprocessed_docs(doc_type):
-    preprocessed_docs = []
-
     if doc_type == "Case":
-        docs_path = 'data/temp/case/preprocessed_docs.csv'
+        docs_path = 'data/temp/case/preprocessed_docs.pkl'
     elif doc_type == "Statute":
-        docs_path = 'data/temp/statute/preprocessed_docs.csv'
+        docs_path = 'data/temp/statute/preprocessed_docs.pkl'
 
-    with open(docs_path, 'r', encoding='utf-8') as f:
-        reader = csv.reader(f)
-        for row in reader:
-            preprocessed_docs.append(row[0])
+    with open(docs_path, 'rb') as f:
+        preprocessed_docs = pickle.load(f)
 
     return preprocessed_docs
 
@@ -122,6 +132,18 @@ def compute_cosine_similarity_score(query_tfidf_matrix, doc_tfidf_matrix):
     return similarity_scores
 
 
+def load_top_case_docs(similarity_scores, documents):
+    # Number of top documents to retrieve
+    num_top_docs = 5
+
+    # Get the indices of the top documents
+    top_doc_indices = similarity_scores.argsort(axis=1)[:, ::-1][:, :num_top_docs]
+
+    # Retrieve the top documents from the original document set
+    top_docs_idx = [i for i in top_doc_indices.flatten()]
+    return top_docs_idx
+
+
 def load_top_documents(similarity_scores, documents):
     # Number of top documents to retrieve
     num_top_docs = 5
@@ -144,4 +166,4 @@ def load_top_documents(similarity_scores, documents):
 
 
 if __name__ == "__main__":
-    pass
+    print(load_pdf_docs(doc_type="Case"))

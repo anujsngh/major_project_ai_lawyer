@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for
+from flask import send_file, Flask, request, jsonify, render_template, redirect, url_for
 from main import *
 import logging
 import json
@@ -23,16 +23,27 @@ def home():
 # def search():
 #     return redirect(url_for('home'))
 
+@app.route('/pdf/<path:path>')
+def serve_pdf(path):
+    full_path = os.path.join("data/case_docs/IT_ACT_2000/", path)
+    return send_file(full_path, mimetype='application/pdf')
+
+
+@app.route('/text/<path:path>')
+def serve_text(path):
+    if "data/statute_docs/IT_ACT_2000/" not in path: 
+        full_path = os.path.join("data/statute_docs/IT_ACT_2000/", path)
+    else:
+        full_path = path
+    return send_file(full_path, mimetype='text/plain')
+
 
 @app.route('/search/rel_cases', methods=['GET', 'POST'])
 def search_rel_cases():
     if request.method == "POST":
         rel_case_query = request.form.get("query")
-        top_docs = rel_cases_search(rel_case_query)
-        # top_docs = json.loads(top_docs_json)
-        # top_documents_json = run1(rel_case_query)
-        # top_docs = jsonify(top_documents_json)
-        return render_template("result_rel_cases.html", top_docs=top_docs)
+        top_case_pdfs_dict = rel_cases_search(rel_case_query)
+        return render_template("result_rel_cases.html", top_case_pdfs_dict=top_case_pdfs_dict)
     return render_template("search_rel_cases.html")
 
 

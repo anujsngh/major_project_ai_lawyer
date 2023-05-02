@@ -2,6 +2,10 @@ import os
 
 cwd = os.getcwd()
 
+data_dir_path = os.path.join(cwd, "data/case_docs/IT_ACT_2000").replace("/", "\\")
+if not os.path.exists(data_dir_path):
+    os.makedirs(data_dir_path)
+
 section_order_dict = {
     '1': 1,
     '2': 2,

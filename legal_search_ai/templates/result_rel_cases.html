@@ -7,37 +7,47 @@
 
 <table class="table table-bordered" style="margin-left: auto;margin-right: auto;">
     <tbody>
-        {% for doc in top_docs %}
+        {% for row in top_case_pdfs_dict %}
             <tr>
-                <td rowspan="8" style="text-align: center;white-space: nowrap;">S.No. {{ doc['doc_id'] }}</td>
+                <td rowspan="8" style="text-align: center;white-space: nowrap;">S.No. {{ loop.index }}</td>
                 <td>Court</td>
-                <td>{{ doc['content']['court'] }}</td>
+                <td>{{ row['court'] }}</td>
                 <td width="20%">Judgement</td>
             </tr>
             <tr style="height:100%;">
+                <td>CNR Number</td>
+                <td>{{ row['cnr_num'] }}</td>
+                <td rowspan="7">
+                    <!-- <object data="{{ url_for('serve_pdf', path=row['pdf']) }}" type="application/pdf" width="100%" height="600px">
+                        <p>Your browser does not support PDFs. <a download="{{ row['pdf'] }}" href="data/case_docs/IT_ACT_2000/{{ row['pdf'] }}">Click here to download the PDF</a>.</p>
+                    </object> -->
+                    <a href="{{ url_for('serve_pdf', path=row['pdf']) }}" target="_blank">View PDF</a>
+                    <br>
+                </td>
+            </tr>
+            <tr style="height:100%;">
                 <td>Case Number</td>
-                <td>{{ doc['content']['case_num'] }}</td>
-                <td rowspan="5"><a href="#" target="_blank"></a><a href="#" target="_blank">Details</a><br></td>
+                <td>{{ row['case_num'] }}</td>
             </tr>
             <tr style="height:100%;">
                 <td>Title</td>
-                <td>{{ doc['content']['title'] }}</td>
+                <td>{{ row['case_title'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Date of Registration</td>
+                <td>{{ row['date_of_register'] }}</td>
             </tr>
             <tr style="height:100%;">
                 <td>Date of Judgment</td>
-                <td>{{ doc['content']['judge_date'] }}</td>
-            </tr>
-            <tr style="height:100%;">
-                <td>Petitioner Name</td>
-                <td>{{ doc['content']['pet_name'] }}</td>
-            </tr>
-            <tr style="height:100%;">
-                <td>Respondent Name</td>
-                <td>{{ doc['content']['resp_name'] }}</td>
+                <td>{{ row['date_of_decision'] }}</td>
             </tr>
             <tr style="height:100%;">
                 <td>Judgment By</td>
-                <td>{{ doc['content']['judge_by'] }}</td>
+                <td>{{ row['judges'] }}</td>
+            </tr>
+            <tr style="height:100%;">
+                <td>Nature of Disposal</td>
+                <td>{{ row['disposal_nature'] }}</td>
             </tr>
             <tr>
                 <td colspan="4"></td>

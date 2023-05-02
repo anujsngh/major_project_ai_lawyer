@@ -140,17 +140,20 @@ def preprocess_text(text):
     return preprocessed_text
 
 
-def load_pdf(pdf_file_path, password=None):
+def extract_pdf_text(pdf_file_path, password=None):
     # Open the PDF file in read-binary mode
     with open(pdf_file_path, 'rb') as pdf_file:
     
         # Create a PDF reader object
         pdf_reader = PyPDF2.PdfReader(pdf_file)
 
-        # Check if the PDF is encrypted
-        if pdf_reader.is_encrypted:
-            # Decrypt the PDF with the password 'password'
-            pdf_reader.decrypt(password)
+        # try:
+        #     # Check if the PDF is encrypted
+        #     if pdf_reader.is_encrypted:
+        #         # Decrypt the PDF with the password 'password'
+        #         pdf_reader.decrypt(password)
+        # except:
+        #     print("Error while decrypting the pdf.")
             
         # Get the number of pages in the PDF file
         num_pages = len(pdf_reader.pages)
@@ -169,7 +172,6 @@ def load_pdf(pdf_file_path, password=None):
             pdf_text += page_text
 
         return pdf_text
-
 
 
 if __name__ == "__main__":
