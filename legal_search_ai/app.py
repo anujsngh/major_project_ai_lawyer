@@ -23,6 +23,7 @@ def home():
 # def search():
 #     return redirect(url_for('home'))
 
+
 @app.route('/pdf/<path:path>')
 def serve_pdf(path):
     full_path = os.path.join("data/case_docs/IT_ACT_2000/", path)
