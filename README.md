@@ -4,7 +4,7 @@
 #### 1) Find relevant cases which includes similar scenarios as the current case.
 #### 2) Find applicable law/act and it's sections in the scenario of current case.
 
-** A law practitioner(e.g. lawyer), law enforcers (e.g. police) and even a common man can use this to get relevant information and know better about their case.
+### Use : A law practitioner(e.g. lawyer), law enforcers (e.g. police) and even a common man can use this to get relevant information and know better about their case.
 
 
 ### Project Report :
@@ -15,16 +15,16 @@
 ### Team Members :
 
 1) Arpita Yadav
-Github : 
+[Github : ]
 
 2) Anupam Pandey
-Github : https://github.com/Anupam199949
+[Github : https://github.com/Anupam199949]
 
 3) Akash Kumar Singh
-Github : https://github.com/THEAKS1
+[Github : https://github.com/THEAKS1]
 
 4) Anuj Singh
-Github : https://github.com/anuj-s1ngh/
+[Github : https://github.com/anuj-s1ngh/]
 
 
 #### this project is in it's early stage so maybe does not work correctely every time.
