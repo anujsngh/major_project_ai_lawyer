@@ -30,4 +30,4 @@ A law practitioner(e.g. lawyer), law enforcers (e.g. police) and even a common m
 
 
 
-##### ** this project is in it's early stage so maybe does not work correctely every time.
+##### ** this project is in it's early stage so maybe does not work correctly every time.
