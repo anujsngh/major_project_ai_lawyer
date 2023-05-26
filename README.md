@@ -4,7 +4,7 @@
 #### 1) Find relevant cases which includes similar scenarios as the current case.
 #### 2) Find applicable law/act and it's sections in the scenario of current case.
 
-### Use : A law practitioner(e.g. lawyer), law enforcers (e.g. police) and even a common man can use this to get relevant information and know better about their case.
+#### Use : A law practitioner(e.g. lawyer), law enforcers (e.g. police) and even a common man can use this to get relevant information and know better about their case.
 
 
 ### Project Report :
